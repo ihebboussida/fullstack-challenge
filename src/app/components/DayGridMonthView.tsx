@@ -17,7 +17,7 @@ export const DayGridMonthView:FC<DayGridMonthViewProps> = ({title,timeRange,loca
     <HoverCard>
       <HoverCardTrigger asChild>
         <div
-          className="p-1 text-sm font-semibold w-full h-full "
+          className="p-1 text-sm font-semibold w-full h-full truncate"
           style={{
             borderLeft: `4px solid ${lightenColor(
               categoryColor,
@@ -32,18 +32,18 @@ export const DayGridMonthView:FC<DayGridMonthViewProps> = ({title,timeRange,loca
         <div className="p-1 overflow-hidden ">
           <h1 className="text-sm font-semibold">{title}</h1>
           <div className="mt-1 flex flex-col gap-1 text-xs text-muted-foreground">
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-1 truncate">
               <Clock className="w-4 h-4" />
               <span>{timeRange}</span>
             </div>
             {location && (
-              <div className="flex items-center gap-1">
+              <div className="flex items-center gap-1 truncate">
                 <MapPin className="w-4 h-4" />
                 <span>{location}</span>
               </div>
             )}
             {notes && (
-              <div className="flex items-center gap-1">
+              <div className="flex items-center gap-1 truncate">
                 <StickyNote className="w-4 h-4" />
                 <span>{notes}</span>
               </div>

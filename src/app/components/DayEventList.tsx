@@ -1,8 +1,6 @@
 import {
   CalendarIcon,
   MapPinIcon,
-  UsersIcon,
-  CheckCircle,
   StickyNoteIcon,
 } from "lucide-react";
 import { EventInput } from "@fullcalendar/core";
