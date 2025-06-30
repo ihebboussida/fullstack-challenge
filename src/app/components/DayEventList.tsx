@@ -18,6 +18,9 @@ export function DayEventList({
   events,
   onEventClicked,
 }: DayEventListProps) {
+  if (!events.length) {
+    return null;
+  }
   return (
     <div className="p-4 w-full max-w-md mx-auto">
       <h2 className="text-lg font-semibold mb-4 text-center">{dateLabel}</h2>
@@ -68,7 +71,6 @@ export function DayEventList({
                     )}
                   </div>
                 </div>
-
               </div>
             </div>
           );

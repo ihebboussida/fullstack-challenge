@@ -12,6 +12,7 @@ import { lightenColor } from "../utils/lightenColor";
 import { Appointment } from "../api/appointments/route";
 import { DayEventList } from "./DayEventList";
 import interactionPlugin from "@fullcalendar/interaction";
+import { getDateLabel } from "../utils/getDateLabel";
 
 type Filters = {
   category: string;
@@ -26,7 +27,7 @@ interface CalendarProps {
   setIsLoading: (isLoading: boolean) => void;
 }
 
-interface DateRange {
+export interface DateRange {
   start: string;
   end: string;
 }
@@ -138,15 +139,7 @@ export default function Calendar({
         <DayEventList
           events={getEventsForSelectedDate()}
           onEventClicked={(id: string) => onEventSelect(id)}
-          dateLabel={(selectedDate?.start ?? new Date()).toLocaleDateString(
-            "de-DE",
-            {
-              weekday: "long",
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            }
-          )}
+          dateLabel={getDateLabel(selectedDate,events)}
         />
       )}
     </div>
